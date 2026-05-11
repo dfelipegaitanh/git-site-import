@@ -43,7 +43,7 @@ export function EmailForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-md border border-foreground/15 bg-paper-2 p-6 text-center">
+      <div className="rounded-md border border-foreground/15 bg-muted p-6 text-center">
         <p className="font-serif text-2xl text-foreground">
           Te llega en 1 minuto.
         </p>
