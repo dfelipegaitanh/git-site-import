@@ -8,6 +8,8 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
+import { Toaster } from "sonner";
+
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -82,9 +84,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600&display=swap",
       },
     ],
   }),
@@ -114,6 +119,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
+      <Toaster position="top-center" theme="light" />
     </QueryClientProvider>
   );
 }
